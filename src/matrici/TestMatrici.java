@@ -36,11 +36,20 @@ public class TestMatrici {
                     }
                     System.out.println(Matrici.Stampa(m));
                     //Prima funzione
-                    System.out.println("Inserire due indici di colonna da scambiare --> Il primo :");
-                    n1=in.nextInt();
-                    System.out.println("Inserire due indici di colonna da scambiare --> Il secondo :");
-                    n2=in.nextInt();
-                    Matrici.invertiIndiciColonne(m,n1,n2);
+                    int rr1,rr2;
+                    do {
+                        System.out.println("Inserire due indici di colonna da scambiare --> Il primo :");
+                        rr1=in.nextInt();
+                        if (rr1<0 || rr1>= m.length)
+                            System.out.println("Inserire un valore accettabile della matrice");
+                    }while(rr1<0 || rr1>= m.length);
+                    do {
+                        System.out.println("Inserire due indici di colonna da scambiare --> Il secondo :");
+                        rr2=in.nextInt();
+                        if (rr2<0 || rr2>= m.length)
+                            System.out.println("Inserire un valore accettabile della matrice");
+                    }while(rr2<0 || rr2>= m.length);
+                    Matrici.invertiIndiciColonne(m,rr1,rr2);
                     System.out.println(Matrici.Stampa(m));
                     break;
                 case 1:
@@ -57,10 +66,19 @@ public class TestMatrici {
                     }
                     System.out.println(Matrici.Stampa(m2));
                     //Seconda funzione
-                    System.out.println("Inserire due indici di riga da scambiare --> Il primo :");
-                    int r1=in.nextInt();
-                    System.out.println("Inserire due indici di riga da scambiare --> Il secondo :");
-                    int r2=in.nextInt();
+                    int r1,r2;
+                    do {
+                        System.out.println("Inserire due indici di riga da scambiare --> Il primo :");
+                        r1=in.nextInt();
+                        if (r1<0 || r1>= m2.length)
+                            System.out.println("Inserire un valore accettabile della matrice");
+                    }while(r1<0 || r1>= m2.length);
+                    do {
+                        System.out.println("Inserire due indici di riga da scambiare --> Il secondo :");
+                        r2=in.nextInt();
+                        if (r2<0 || r2>= m2.length)
+                            System.out.println("Inserire un valore accettabile della matrice");
+                    }while(r2<0 || r2>= m2.length);
                     Matrici.invertiIndiciRighe(m2,r1,r2);
                     System.out.println(Matrici.Stampa(m2));
                     break;
