@@ -32,23 +32,16 @@ public class TestMatrici {
                     for (int i = 0; i < m.length; i++) {
                         for (int p = 0; p <m[0].length; p++) {
                             m[i][p] = generatore.nextInt(200);
-                            System.out.print(m[i][p]+" ");
                         }
-                        System.out.println();
                     }
+                    System.out.println(Matrici.Stampa(m));
                     //Prima funzione
                     System.out.println("Inserire due indici di colonna da scambiare --> Il primo :");
                     n1=in.nextInt();
                     System.out.println("Inserire due indici di colonna da scambiare --> Il secondo :");
                     n2=in.nextInt();
                     Matrici.invertiIndiciColonne(m,n1,n2);
-                    //Stampa
-                    for (int i = 0; i < m.length; i++) {
-                        for (int p = 0; p < m[0].length; p++) {
-                            System.out.print(m[i][p]+" ");
-                        }
-                        System.out.println();
-                    }
+                    System.out.println(Matrici.Stampa(m));
                     break;
                 case 1:
                     //Inserimento automatizzato
@@ -60,23 +53,16 @@ public class TestMatrici {
                     for (int i = 0; i < m2.length; i++) {
                         for (int p = 0; p <m2[0].length; p++) {
                             m2[i][p] = generatore.nextInt(200);
-                            System.out.print(m2[i][p]+" ");
                         }
-                        System.out.println();
                     }
+                    System.out.println(Matrici.Stampa(m2));
                     //Seconda funzione
                     System.out.println("Inserire due indici di riga da scambiare --> Il primo :");
                     int r1=in.nextInt();
                     System.out.println("Inserire due indici di riga da scambiare --> Il secondo :");
                     int r2=in.nextInt();
                     Matrici.invertiIndiciRighe(m2,r1,r2);
-                    //Stampa
-                    for (int i = 0; i < m2.length; i++) {
-                        for (int p = 0; p < m2[0].length; p++) {
-                            System.out.print(m2[i][p]+" ");
-                        }
-                        System.out.println();
-                    }
+                    System.out.println(Matrici.Stampa(m2));
                     break;
                 case 2:
                     //Terza funzione
@@ -100,13 +86,7 @@ public class TestMatrici {
                             {8,11,13,0}
                     };
                     Matrici.matriceTrasposta(m4);
-                    //Stampa
-                    for (int i = 0; i < m4.length; i++) {
-                        for (int p = 0; p < m4[0].length; p++) {
-                            System.out.print(m4[p][i]+" ");
-                        }
-                        System.out.println();
-                    }
+                    System.out.println(Matrici.Stampa(m4));
                     break;
                 case 4:
                     //Inserimento automatizzato
@@ -118,10 +98,9 @@ public class TestMatrici {
                     for (int i = 0; i < m5.length; i++) {
                         for (int p = 0; p <m5[0].length; p++) {
                             m5[i][p] = generatore.nextInt(200);
-                            System.out.print(m5[i][p]+" ");
                         }
-                        System.out.println();
                     }
+                    System.out.println(Matrici.Stampa(m5));
                     //Quinta funzione
                     int [] sommariga=new int[m5.length];
                     Matrici.matriceSommaRighe(m5,sommariga);
@@ -139,10 +118,9 @@ public class TestMatrici {
                     for (int i = 0; i < m6.length; i++) {
                         for (int p = 0; p <m6[0].length; p++) {
                             m6[i][p] = generatore.nextInt(200);
-                            System.out.print(m6[i][p]+" ");
                         }
-                        System.out.println();
                     }
+                    System.out.println(Matrici.Stampa(m6));
                     //Sesta funzione
                     int [] sommacolonna=new int[m6[0].length];
                     Matrici.matriceSommaColonne(m6,sommacolonna);
@@ -159,12 +137,7 @@ public class TestMatrici {
                             {8,11,13,0}
                     };
                     Matrici.matriceRiempitiva(m7);
-                    for (int i = 0; i < m7.length; i++) {
-                        for (int p = 0; p < m7[0].length; p++) {
-                            System.out.print(m7[i][p]+" ");
-                        }
-                        System.out.println();
-                    }
+                    System.out.println(Matrici.Stampa(m7));
                     break;
                 case 7:
                     //Ottava funzione
@@ -175,12 +148,7 @@ public class TestMatrici {
                             {8,11,13,0}
                     };
                     Matrici.matriceRiempitivaContraria(m8);
-                    for (int i = 0; i < m8.length; i++) {
-                        for (int p = 0; p < m8[0].length; p++) {
-                            System.out.print(m8[i][p]+" ");
-                        }
-                        System.out.println();
-                    }
+                    System.out.println(Matrici.Stampa(m8));
                     break;
                 case 8:
                     //Nona funzione

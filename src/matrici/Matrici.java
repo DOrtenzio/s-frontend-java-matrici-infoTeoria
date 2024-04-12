@@ -92,4 +92,15 @@ public class Matrici {
         }
         return isEquals;
     }
+    //Stampa
+    public static String Stampa (int [][] m){
+        String s=" ";
+        for (int i = 0; i < m.length; i++) {
+            for (int p = 0; p < m[0].length; p++) {
+                s=s+m[i][p]+"\t";
+            }
+            s=s+"\n";
+        }
+        return s;
+    }
 }
