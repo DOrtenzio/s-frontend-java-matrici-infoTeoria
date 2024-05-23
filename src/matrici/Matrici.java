@@ -17,21 +17,19 @@ public class Matrici {
         }
     }
     public static boolean isSimmetricaDiagMaggiore (int [][] m){
-        boolean isEquals=true;
-        for (int i = 0; i < m[0].length; i++) {
-            for (int p = 0; p < m.length; p++) {
+        for (int i = 0; i < m.length; i++) {
+            for (int p = i+1 ; p < m[0].length; p++) {
                 if (m[p][i]!=m[i][p]){
-                    isEquals=false;
-                    break;
+                    return false;
                 }
             }
         }
-        return isEquals;
+        return true;
     }
     public static void matriceTrasposta (int [][] m){
         int temp;
-        for (int i = 0; i < m[0].length; i++) {
-            for (int p = 0; p < m.length; p++) {
+        for (int i = 0; i < m.length; i++) {
+            for (int p = i+1; p < m[0].length; p++) {
                 temp=m[i][p];
                 m[i][p]=m[p][i];
                 m[p][i]=temp;
@@ -53,44 +51,34 @@ public class Matrici {
         }
     }
     public static void matriceRiempitiva (int [][] m){
-        for (int i=0;i<m[0].length;i++) {
-            for (int p=i;p<m.length;p++) {
-                m[p][i]=1;
-            }
-        }
-        for (int i = 0; i < m[0].length; i++) { //Colonna
-            for (int p=0;p<i;p++) { //Riga
-                m[p][i]=0;
+        for (int i=0;i<m.length;i++) {
+            for (int p=0;p<m[0].length;p++) {
+                if (p<=i)
+                    m[i][p]=0;
+                else
+                    m[i][p]=1;
             }
         }
     }
     public static void matriceRiempitivaContraria (int [][] m){
-        for (int i=0;i<m[0].length;i++) {
-            for (int p=i;p<m.length;p++) {
-                m[p][i]=0;
-            }
-        }
-        for (int i = 0; i < m[0].length; i++) { //Colonna
-            for (int p=0;p<=i;p++) { //Riga
-                m[p][i]=1;
+        for (int i=0;i<m.length;i++) {
+            for (int p=0;p<m[0].length;p++) {
+                if (p>=i)
+                    m[i][p]=1;
+                else
+                    m[i][p]=0;
             }
         }
     }
     public static boolean isSottoLaDiagonale (int [][] m){
-        boolean isEquals=true;
-        for (int i=0;i<m[0].length;i++) {
-            for (int p=i;p<m.length;p++) {
-                if (p!=i){
-                    if (m[p][i]!=m[1][0]){
-                        isEquals=false;
-                        break;
-                    }
+        for (int i=0;i<m.length;i++) {
+            for (int p=0;p<m[i].length;p++) {
+                if (p<i && m[1][0]!=m[i][p]){
+                    return false;
                 }
             }
-            if (!isEquals)
-                break;
         }
-        return isEquals;
+        return true;
     }
     //Stampa
     public static String Stampa (int [][] m){
